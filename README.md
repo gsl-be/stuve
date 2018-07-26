@@ -10,3 +10,6 @@ npm install
 Run the app
 
 `node app.js`
+
+View the app
+http://localhost:3000
