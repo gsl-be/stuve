@@ -4,11 +4,115 @@
     <title>Stuve</title> <!--replace by name of website-->
 </head>
 <body>
+   <link rel="stylesheet" type="text/css" href="../public/stylesheets/entete.css">
+   <link rel="stylesheet" type="text/css" href="../public/stylesheets/homepage.css">
+   <!--login -->
+   <div align="right"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></div>
+        
+</div>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
    
-   <object type="text/html" data="header.html" height="500px" width="100%"></object>  <!--height to adapt with logo-->
-</head>
+    <div class="container">
+      <label for="uname"><b>Email</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Mot de passe</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<!--sign up-->
+
+ <div align="right"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button></div>
+        
+</div>
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
     
-    
+    <div class="container">
+
+        <label for="prenom"><b>Prenom</b></label>
+      <input type="text" placeholder="Entrer Prenom" name="prenom" required>
+
+ <label for="nom"><b>Nom</b></label>
+      <input type="text" placeholder="Entrer Nom" name="nom" required>
+
+      
+      <label for="mail"><b>Email</b></label>
+      <input type="text" placeholder="Entrer adresse mail" name="mail" required>
+
+       
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <label for="annee"><b>Annee</b></label>
+        <select name="cars" required>
+             <option value="bac1">BAC1</option>
+            <option value="bac2">BAC2</option>
+            <option value="bac3">BAC3</option>
+            <option value="ma1">MA1</option>
+            <option value="ma2">MA2</option>
+        </select> 
+
+      <button type="submit">S'enregistrer</button>
+      
+      
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      
+    </div>
+  </form>
+</div>
+
+<!-- 4 services -->
+
+<div class="row">
+<div class="column">
+<div class="container2">
+  <img src="snow.jpg" alt="Snow" style="width:100%">
+  <button class="btn" onclick="window.location.href='categories.html'">Button</button>
+
+</div>
+</div>
+<div class="column">
+<div class="container2">
+  <img src="snow.jpg" alt="Snow" style="width:100%">
+  <button class="btn">Button</button>
+</div>
+</div>
+</div>
+<div class="column">
+<div class="container2">
+  <img src="snow.jpg" alt="Snow" style="width:100%">
+  <button class="btn">Button</button>
+</div>
+</div>
+<div class="column">
+<div class="container2">
+  <img src="snow.jpg" alt="Snow" style="width:100%">
+  <button class="btn">Button</button>
+</div>
+</div>
+
 </body>
 </html>
 
