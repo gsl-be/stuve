@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/nouvelle_annonce', function(req, res, next) {
+  objet = req.query["objet"]
+  res.send(objet)
+});
+
 module.exports = router;

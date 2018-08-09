@@ -3,19 +3,34 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+<!--
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
 ">
 
-
+-->
 </head>
 <body>
 
-<link rel="stylesheet" type="text/css" href="../public/stylesheets/entete.css">
-   <link rel="stylesheet" type="text/css" href="../public/stylesheets/categories.css">
+  <link rel="stylesheet" type="text/css" href="../public/stylesheets/entete.css">
+  <link rel="stylesheet" type="text/css" href="../public/stylesheets/categories.css">
+
+<div>
+  <div class="columnLogo">   
+      <p> Campus <br> Louvain-la-Neuve </p>
+  </div>  
+
+  <div class="columnLogo">
+      <img src="logo.png" style="width:200px; height:auto">
+  </div>
    <!--login -->
-   <div align="right"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></div>
-        
+  <div class="columnLogo">
+     <div class="header" align="right"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+     </div>
+
+      <div class="header" align="right"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button>
+      </div>
+      <img src="K.jpg" alt="Avatar" class="avatar">
+  </div>
 </div>
 
 <div id="id01" class="modal">
@@ -42,11 +57,12 @@
   </form>
 </div>
 
-<!--sign up-->
-
- <div align="right"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button></div>
+<!-- sign up -->
+<!-- 
+ <div align="right"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button></div> -->
         
-</div>
+<!-- </div> -->
+
 
 <div id="id02" class="modal">
   
@@ -54,10 +70,10 @@
     
     <div class="container">
 
-        <label for="prenom"><b>Prenom</b></label>
+      <label for="prenom"><b>Prenom</b></label>
       <input type="text" placeholder="Entrer Prenom" name="prenom" required>
 
- <label for="nom"><b>Nom</b></label>
+      <label for="nom"><b>Nom</b></label>
       <input type="text" placeholder="Entrer Nom" name="nom" required>
 
       
@@ -84,59 +100,92 @@
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-      
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>      
     </div>
   </form>
+
 </div>
 
 <!-- 4 categoris -->
 <div class="navbar">
  <div class="dropdown">
+  <div>
+  <img src="Sofa.jpg" width=100px>
+</div>
+<div>
     <button class="dropbtn" onclick="myFunction('dropDownMob')">Mobilier
       <i class="fa fa-caret-down"></i>
     </button>
-    <div class="dropdown-content" id="dropDownMob">
-    <a href="#table">Table</a>
-    <a href="#chaise">Chaise</a>
-    <a href="#lit">Lit</a>
-    <a href="#tabledenuit">Table de nuit</a>
-    <a href="#Etagere">Etagère</a>
-    <a href="#Armoire">Armoire</a>
   </div>
-</div>
+    <div class="dropdown-content" id="dropDownMob">
+      <a href="#Etagere">Etagere</a>
+      <a href="#Armoire">Armoire</a> 
+      <a href="#bureau">Bureau</a>
+      <a href="#chaise">Chaise</a>
+      <a href="#chaisebureau">Chaise de bureau</a>
+      <a href="#lit">Lit</a>
+      <a href="#table">Table</a>   
+      <a href="#tablebasse">Table basse</a>
+      <a href="#tabledenuit">Table de nuit</a>    
+    </div>
+  </div>
 <div class="dropdown">
+  <div>
+  <img src="Fridge.jpg" width=100px style="vertical-align: middle;">
+</div>
+<div>
     <button class="dropbtn" onclick="myFunction('dropDownElec')">Electromenager
       <i class="fa fa-caret-down"></i>
-    </button>
+    </button></div>
     <div class="dropdown-content" id="dropDownElec">
-    <a href="#microondes">Micro-ondes</a>
-    <a href="#four">Four</a>
-    <a href="#mixeur">Mixeur</a>
-    <a href="#frigo">Frigo</a>
-    <a href="#grillepain">Grille-pain</a>
-    <a href="#bouilloire">Bouilloire</a>
-    
+      <a href="aspirateur "> Aspirateur </a>
+      <a href="balance"> Balance</a>
+      <a href="#bouilloire">Bouilloire</a>
+      <a href="#four">Four</a>
+      <a href="#frigo">Frigo</a>
+      <a href="#grillepain">Grille-pain</a>
+      <a href="lavevaisselle"> Lave vaisselle </a>
+      <a href=" machinecafe"> Machine a cafe</a>
+      <a href="#microondes">Micro-ondes</a>
+      <a href="#mixeur">Mixeur</a>
   </div>
 </div>
 <div class="dropdown">
+  <div>
+  <img src="Dish.jpg" width=100px style="vertical-align: middle;"></div>
+  <div>
     <button class="dropbtn" onclick="myFunction('dropDownVais')">Vaisselle/Ustensiles
       <i class="fa fa-caret-down"></i>
-    </button>
+    </button></div>
     <div class="dropdown-content" id="dropDownVais">
-    <a href="#couverts">Couverts</a>
-    <a href="#spatule">Spatule</a>
-    <a href="#fouet">Fouet</a>
-    <a href="#assiette">Assiette</a>
-    <a href="#sousplat">Sous-plat</a>
-    <a href="#manique">Manique</a>
+      <a href="allumegas"> Allume-gaz </a>
+      <a href="#assiette">Assiette</a>
+      <a href="bols"> Bols </a>
+      <a href="chopsticks"> Chopsticks </a>     
+      <a href="#couverts">Couverts</a>
+      <a href="couteaux"> Couteaux </a>
+      <a href="ciseaux"> Ciseaux </a>
+      <a href="#fouet">Fouet</a>
+      <a href="#manique">Manique</a>
+      <a href="Moulegateau"> Moule a gateaux </a>
+      <a href="poele"> Poele </a>
+      <a href="raclette"> Raclette</a>
+      <a href="rape">Rape </a>
+      <a href="seau"> Seau</a>
+      <a href="#sousplat">Sous-plat</a>
+      <a href="#spatule">Spatule</a> 
+      <a href="verres"> Verres </a>
+
   </div>
 </div>
 
   <div class="dropdown">
+    <div>
+    <img src="Lamp.jpg" width=100px style="vertical-align: middle;">
+  </div><div>
     <button class="dropbtn" onclick="myFunction('dropDownLamp')">Lampes
       <i class="fa fa-caret-down"></i>
-    </button>
+    </button></div>
     <div class="dropdown-content" id="dropDownLamp">
      <a href="#home">Lampes de bureau</a>
     <a href="#about">Lampes de chevet</a>

@@ -6,12 +6,25 @@
 <body>
    <link rel="stylesheet" type="text/css" href="../public/stylesheets/entete.css">
    <link rel="stylesheet" type="text/css" href="../public/stylesheets/homepage.css">
+
+<div>
+   <div class="columnLogo">   
+    <p> Campus <br> Louvain-la-Neuve </p>
+</div>  
+
+<div class="columnLogo">
+  <img src="logo.png" style="width:200px; height:auto">
+</div>
    <!--login -->
-   <div align="right"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></div>
-        
+   <div class="columnLogo">
+   <div class="header" align="right"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></div>
+
+ <div class="header" align="right"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button></div>
+ <img src="K.jpg" alt="Avatar" class="avatar">
+</div>
 </div>
 
-<div id="id01" class="modal">
+  <div id="id01" class="modal">
   
   <form class="modal-content animate" action="/action_page.php">
    
@@ -35,11 +48,11 @@
   </form>
 </div>
 
-<!--sign up-->
-
- <div align="right"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button></div>
+<!-- sign up -->
+<!-- 
+ <div align="right"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button></div> -->
         
-</div>
+<!-- </div> -->
 
 <div id="id02" class="modal">
   
@@ -47,10 +60,10 @@
     
     <div class="container">
 
-        <label for="prenom"><b>Prenom</b></label>
+      <label for="prenom"><b>Prenom</b></label>
       <input type="text" placeholder="Entrer Prenom" name="prenom" required>
 
- <label for="nom"><b>Nom</b></label>
+      <label for="nom"><b>Nom</b></label>
       <input type="text" placeholder="Entrer Nom" name="nom" required>
 
       
@@ -77,42 +90,54 @@
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-      
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>      
     </div>
   </form>
+
 </div>
 
 <!-- 4 services -->
 
 <div class="row">
-<div class="column">
-<div class="container2">
-  <img src="snow.jpg" alt="Snow" style="width:100%">
-  <button class="btn" onclick="window.location.href='categories.html'">Button</button>
-
+  <div class="column">
+    <div class="container2">
+      <img src="Mobilier Small.jpg" alt="mobilier" >
+      <div class="bottom-left">MOBILIER</div>
+      <div class="overlay">En cliquant ici, tu arriveras sur la page d achat ou de vente du mobilier. Tu touveras tout ce dont tu auras besoin pour vivre une vie d etudiant insouciante. On s occupe de tout!
+        <button class="achat" onclick="window.location.href='categories.html'">Achat</button>
+        <button class="vente" onclick="window.location.href='selling.html'">Vente</button>
+      </div>
+      <!--<button class="overlay2" onclick="window.location.href='categories.html'">Achat</button>
+      <button class="overlay2" onclick="window.location.href='selling.html'">Vente</button> -->    
+    </div>
+    </div>
+  <div class="column">
+    <div class="container2">
+      <img src="Entraide Small.jpg" alt="Entraide" " onclick="window.location.href='categories.html">
+      <div class="overlay">Ajouter description</div>
+      <div class="bottom-right">SERVICES </div>
+      <div class="bottom-right2">A venir...</div>
+    </div>
+  </div>
 </div>
+<div class="row">
+  <div class="column">
+    <div class="container2">
+      <img src="Carte Small.jpg" alt="map" >
+      <div class="bottom-left">CARTE</div>
+      <div class="bottom-left2">A venir...</div>
+      <div class="overlay">Localisation des objets a donner</div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="container2">
+      <img src="Logistics Small.jpg" alt="Stockage" >
+      <div class="bottom-right">STOCKAGE</div>
+      <div class="bottom-right2">A venir...</div>
+      <div class="overlay">Louer une zone de stockage</div>
+    </div>
+  </div>
 </div>
-<div class="column">
-<div class="container2">
-  <img src="snow.jpg" alt="Snow" style="width:100%">
-  <button class="btn">Button</button>
-</div>
-</div>
-</div>
-<div class="column">
-<div class="container2">
-  <img src="snow.jpg" alt="Snow" style="width:100%">
-  <button class="btn">Button</button>
-</div>
-</div>
-<div class="column">
-<div class="container2">
-  <img src="snow.jpg" alt="Snow" style="width:100%">
-  <button class="btn">Button</button>
-</div>
-</div>
-
 </body>
 </html>
 
