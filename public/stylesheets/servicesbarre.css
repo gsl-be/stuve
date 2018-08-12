@@ -1,0 +1,43 @@
+/*barre des 4 services*/
+.btnserv {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  /*padding: 14px 28px;*/
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btnserv:hover{
+    background-color:#17426d;
+    color:white;
+ }
+
+/* Mobilier */
+
+.mob:hover {
+  background-color: #17426d;
+  color: white;
+}
+
+
+/* Entraide */
+
+.entraide:hover {
+  background: #0b5845;
+  color: white;
+}
+
+/* Map */
+
+.map:hover {
+  background: #d3bd76;
+  color: white;
+}
+
+/* Stockage */
+
+.stockage:hover {
+  background: #5c5c5b;
+  color: white;
+}

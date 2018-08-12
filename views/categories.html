@@ -13,27 +13,26 @@
 
   <link rel="stylesheet" type="text/css" href="../public/stylesheets/entete.css">
   <link rel="stylesheet" type="text/css" href="../public/stylesheets/categories.css">
-
+<link rel="stylesheet" type="text/css" href="../public/stylesheets/servicesbarre.css">
+   
 <div>
-  <div class="columnLogo">   
-      <p> Campus <br> Louvain-la-Neuve </p>
-  </div>  
+   <div class="columnLogo">   
+    <p> Campus <br> Louvain-la-Neuve </p>
+</div>  
 
-  <div class="columnLogo">
-      <img src="logo.png" style="width:200px; height:auto">
-  </div>
+<div class="columnLogo" style="text-align: center;">
+  <img src="logo.png" style="width:200px; height:auto">
+</div>
    <!--login -->
-  <div class="columnLogo">
-     <div class="header" align="right"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-     </div>
+   <div class="columnLogo">
+   <div class="header" align="right"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></div>
 
-      <div class="header" align="right"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button>
-      </div>
-      <img src="K.jpg" alt="Avatar" class="avatar">
-  </div>
+ <div class="header" align="right"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button></div>
+ <img src="K.jpg" alt="Avatar" class="avatar">
+</div>
 </div>
 
-<div id="id01" class="modal">
+  <div id="id01" class="modal">
   
   <form class="modal-content animate" action="/action_page.php">
    
@@ -61,7 +60,6 @@
 <!-- 
  <div align="right"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button></div> -->
         
-<!-- </div> -->
 
 
 <div id="id02" class="modal">
@@ -106,11 +104,22 @@
 
 </div>
 
+
+<!-- barre des services -->
+<div>
+<button class="btnserv mob" style="background-color: #17426d;color: white">Mobilier</button>
+<button class="btnserv entraide">Services</button>
+<button class="btnserv map">Carte</button>
+<button class="btnserv stockage">Stockage</button>
+</div>
+
+<!-- banniere -->
+<img src="Mobilier Small.jpg" style="margin-top:10px;width:100%;height:50px;">
 <!-- 4 categoris -->
 <div class="navbar">
  <div class="dropdown">
   <div>
-  <img src="Sofa.jpg" width=100px>
+  <img src="Sofa.jpg" width=150px>
 </div>
 <div>
     <button class="dropbtn" onclick="myFunction('dropDownMob')">Mobilier
@@ -131,7 +140,7 @@
   </div>
 <div class="dropdown">
   <div>
-  <img src="Fridge.jpg" width=100px style="vertical-align: middle;">
+  <img src="Fridge.jpg" width=150px style="vertical-align: middle">
 </div>
 <div>
     <button class="dropbtn" onclick="myFunction('dropDownElec')">Electromenager
@@ -152,7 +161,7 @@
 </div>
 <div class="dropdown">
   <div>
-  <img src="Dish.jpg" width=100px style="vertical-align: middle;"></div>
+  <img src="Dish.jpg" width=150px style="vertical-align: middle;"></div>
   <div>
     <button class="dropbtn" onclick="myFunction('dropDownVais')">Vaisselle/Ustensiles
       <i class="fa fa-caret-down"></i>
@@ -181,7 +190,7 @@
 
   <div class="dropdown">
     <div>
-    <img src="Lamp.jpg" width=100px style="vertical-align: middle;">
+    <img src="Lamp.jpg" width=150px style="vertical-align: middle;">
   </div><div>
     <button class="dropbtn" onclick="myFunction('dropDownLamp')">Lampes
       <i class="fa fa-caret-down"></i>

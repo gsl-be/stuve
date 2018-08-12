@@ -1,40 +1,12 @@
 
 * {box-sizing: border-box;}
 
-.column {
-    float: left;
-    width: 30vw;
-    height: 40vh;
-    padding: 10px;
-    /*margin-left:100px;*/
-}
 
-.columnLogo {
-    float: left;
-    width: 30vw;
-    height: 25vh;
-    padding: 10px;
-    /*margin-left:100px;*/
-}
 
-/* Style the images inside the grid */
-.column img {
-    opacity: 0.8; 
-    cursor: pointer; 
-}
-
-.columnLogo p{
-    padding:0px;
-    margin-top: 0;
-}
-
-.column img:hover {
-    opacity: 1;
-}
 
 .row{
     text-align: center;
-    margin-left:15%;
+    /*margin-left:15%;*/
 
 }
 
@@ -42,7 +14,7 @@
     content: "";
     display: table;
     clear: both;
-    padding:10px;
+    /*padding:10px;*/
     margin-left: : 20px;
     margin-right:  20px;
     text-align:center;
@@ -156,3 +128,14 @@
 }
 
 
+.column {
+    float: left;
+    width: 30vw;
+    height: 40vh;
+    padding: 10px;
+    /*margin-left:100px;*/
+}
+
+/*.services4{*/
+    /*text-align: center;*/
+/*}*/
