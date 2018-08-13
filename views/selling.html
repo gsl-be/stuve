@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<title>Vente</title>
 </head>
 <body>
 
-  <link rel="stylesheet" type="text/css" href="../public/stylesheets/entete.css">
-   <link rel="stylesheet" type="text/css" href="../public/stylesheets/selling.css">
-   <link rel="stylesheet" type="text/css" href="../public/stylesheets/servicesbarre.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/entete.css">
+   <link rel="stylesheet" type="text/css" href="stylesheets/selling.css">
+   <link rel="stylesheet" type="text/css" href="stylesheets/servicesbarre.css">
 
 <div>
    <div class="columnLogo">   
@@ -16,14 +15,14 @@
 </div>  
 
 <div class="columnLogo" style="text-align: center;">
-  <img src="logo.png" style="width:200px; height:auto">
+  <img src="pictures/logoSMOOK.png" style="width:200px; height:auto; cursor: pointer" onclick="window.location.href='index.html'">
 </div>
    <!--login -->
    <div class="columnLogo">
-   <div class="header" align="right"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></div>
+   <div class="header" align="right"><button style=" cursor: pointer" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></div>
 
- <div class="header" align="right"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button></div>
- <img src="K.jpg" alt="Avatar" class="avatar">
+ <div class="header" align="right"><button style=" cursor: pointer" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button></div>
+ <img src="pictures/K.jpg" alt="Avatar" style=" cursor: pointer" class="avatar">
 </div>
 </div>
 
@@ -102,12 +101,18 @@
 <!-- barre des services -->
 <div>
 <button class="btnserv mob" style="background-color: #17426d;color: white">Mobilier</button>
-<button class="btnserv entraide">Services</button>
-<button class="btnserv map">Carte</button>
-<button class="btnserv stockage">Stockage</button>
+<button class="btnserv entraide" onclick="window.location.href='entraide.html'">Entraide</button>
+<button class="btnserv map" onclick="window.location.href='map.html'">Carte</button>
+<button class="btnserv stockage" onclick="window.location.href='stockage.html'">Logistiques</button>
 </div>
 
-<!-- partie vente -->
+<!-- banniere -->
+<div class="container-banner">
+  <img src="pictures/Mobilier Banner2.jpg" style="margin-top:10px;width:100%">
+  <div class="banner">VENTE</div>
+  
+
+</div><!-- partie vente -->
 
 
 <h2>Nouvelle annonce</h2>
@@ -123,30 +128,99 @@
         <label for="etat">Categorie</label>
       </div>
       <div class="col-75">
-        <select id="objet" name="objet">
-          <option value="mobilier">Mobilier</option>
-          <option value="electronics">Electromenager</option>
-          <option value="vaisselle">Vaisselle/ustensiles</option>
-          <option value="lampe"> Lampe </option>
+        <select id="cat" name="categories">
+          <option onclick="setFieldsMobilier()" value="mobilier">Mobilier</option>
+          <option onclick="setFieldsElectro()" value="electronics">Electromenager</option>
+          <option onclick="setFieldsVaisselle()" value="vaisselle">Vaisselle/ustensiles</option>
+          <option onclick="setFieldsLampe()" value="lampe"> Lampe </option>
         </select>
       </div>
-    </div><div class="row2">
+    </div>
+    <div class="row2">
       <div class="col-25">
-        <label for="etat">Sous-categorie</label>
+        <label id="id-souscatMob" for="souscat">Sous-categorie</label>
       </div>
       <div class="col-75">
-        <select id="objet" name="objet">
-          <option value="mobilier">Mobilier</option>
-          <option value="electronics">Electromenager</option>
-          <option value="vaisselle">Vaisselle/ustensiles</option>
-          <option value="lampe"> Lampe </option>
+        <select id="souscatMob" name="souscategories">
+          <!-- sous-cat mobilier -->
+          <option id="optMob" value="armoire">Armoire</option>
+          <option id="optMob" value="bureau">Bureau </option>
+          <option id="optMob" value="chaise"> Chaise</option>
+          <option id="optMob" value="chaisebureau">Chaise de bureau </option>
+          <option id="optMob" value="lit"> Lit</option>
+          <option id="optMob" value="table">Table </option>
+          <option id="optMob" value="tablebasse"> Table basse</option>
+          <option id="optMob" value="tabledenuit"> Table de nuit</option>
+          </select>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="col-25">
+        <label id="id-souscatElec"for="souscat">Sous-categorie</label>
+      </div>
+      <div class="col-75"> 
+         <select id="souscatElec" name="souscategories">
+          <!-- sous-categorie electronique -->
+          <option id="optElec" value="aspirateur">Aspirateur</option>
+          <option id="optElec" value="balance">Balance</option>
+          <option id="optElec" value="bouilloire">Bouilloire</option>
+          <option id="optElec" value="four">Four</option>
+          <option id="optElec" value="frigo">Frigo</option>
+          <option id="optElec" value="grillepain">Grille-pain</option>
+          <option id="optElec" value="lavevaisselle">Lave vaisselle</option>
+          <option id="optElec" value="machinecafe">Machine a cafe</option>
+          <option id="optElec" value="microondes">Micro-ondes</option>
+          <option id="optElec" value="mixeur">Mixeur</option>
+          </select>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="col-25">
+        <label id="id-souscatVaisselle" for="souscat">Sous-categorie</label>
+      </div>
+      <div class="col-75">
+         <select id="souscatVaisselle" name="souscategories">
+          <!-- sous-categorie vaisselle -->
+          <option id="optVaisselle" value="allumegaz">Allume-gaz</option>
+          <option id="optVaisselle" value="assiette">Assiette</option>
+          <option id="optVaisselle" value="bols">Bols</option>
+          <option id="optVaisselle" value="chopsticks">Chopsticks</option>
+          <option id="optVaisselle" value="couverts">Couverts</option>
+          <option id="optVaisselle" value="couteaux">Couteaux</option>
+          <option id="optVaisselle" value="ciseaux">Ciseaux</option>
+          <option id="optVaisselle" value="fouet">Fouet</option>
+          <option id="optVaisselle" value="manique">Manique</option>
+          <option id="optVaisselle" value="moulegateau">Moule a gateaux</option>
+          <option id="optVaisselle" value="poele">Poele</option>
+          <option id="optVaisselle" value="raclette">Raclette</option>
+          <option id="optVaisselle" value="rape">Rape</option>
+          <option id="optVaisselle" value="seau">Seau</option>
+          <option id="optVaisselle" value="sousplat">Sous-plat</option>
+          <option id="optVaisselle" value="spatule">Spatule</option>
+          <option id="optVaisselle" value="verres">Verres</option>
+</select>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="col-25">
+        <label id="id-souscatLampe" for="souscat">Sous-categorie</label>
+      </div>
+      <div class="col-75">
+         <select id="souscatLampe" name="souscategories">
+
+          <!-- sousc-categorie lampe -->
+          <option id="optLampe" value="lampeaposer"> Lampe a poser </option>
+          <option id="optLampe" value="lampebureau"> Lampe de bureau </option>
+          <option id="optLampe" value="lampechevet"> Lampe de chevet </option>          
+          <option id="optLampe" value="lustre"> Lustre </option>
+
         </select>
       </div>
     </div>
     
     <div class="row2">
       <div class="col-25">
-        <label for="marque">Marque</label>
+        <label id="marque-id" for="marque">Marque</label>
       </div>
       <div class="col-75">
         <input type="text" id="marque" name="marq" placeholder="La marque de votre objet...">
@@ -226,6 +300,61 @@
     </div>
 </div>
 </form>
+
+<script type="text/javascript">
+  
+  //Cette fonction doit enlever tout les champs et sous categories qui ne doivent pas etre visible
+  //pour un mobilier. Elle doit egalement rendre explicitement visible les champs et options qui
+  //doivent l etre. Il faut mettre des ids a tout les champs et options...
+  function setFieldsMobilier(){
+    document.getElementById('id-souscatMob').selected='selected' 
+    document.getElementById('souscatMob').selected='selected' 
+    document.getElementById('id-souscatElec').style.display='none'
+    document.getElementById('souscatElec').style.display='none'
+    document.getElementById('id-souscatVaisselle').style.display='none' 
+    document.getElementById('souscatVaisselle').style.display='none'
+    document.getElementById('id-souscatLampe').style.display='none' 
+    document.getElementById('souscatLampe').style.display='none'
+  }
+
+   function setFieldsElectro(){
+    document.getElementById('id-souscatMob').style.display='none' 
+    document.getElementById('souscatMob').style.display='none' 
+    document.getElementById('id-souscatElec').style.display='block'
+    document.getElementById('souscatElec').style.display='block' 
+    document.getElementById('id-souscatVaisselle').style.display='none' 
+    document.getElementById('souscatVaisselle').style.display='none'
+    document.getElementById('id-souscatLampe').style.display='none' 
+    document.getElementById('souscatLampe').style.display='none'
+  }
+
+  function setFieldsVaisselle(){
+    document.getElementById('id-souscatMob') .style.display='none' 
+    document.getElementById('souscatMob') .style.display='none' 
+    document.getElementById('id-souscatElec').style.display='none'
+    document.getElementById('souscatElec').style.display='none'
+    document.getElementById('id-souscatVaisselle').style.display='block'
+    document.getElementById('souscatVaisselle').style.display='block'
+    document.getElementById('id-souscatLampe').style.display='none' 
+    document.getElementById('souscatLampe').style.display='none'
+  }
+
+
+  function setFieldsLampe(){
+    document.getElementById('id-souscatMob').style.display='none'  
+    document.getElementById('souscatMob') .style.display='none'  
+    document.getElementById('id-souscatElec').style.display='none'
+    document.getElementById('souscatElec').style.display='none'
+    document.getElementById('id-souscatVaisselle').style.display='none' 
+    document.getElementById('souscatVaisselle').style.display='none'
+    document.getElementById('id-souscatLampe').style.display='block'
+    document.getElementById('souscatLampe').style.display='block'
+  }
+
+
+  //parce que mobilier est selectionne par defaut
+  setFieldsMobilier()
+</script>
 
 </body>
 </html>

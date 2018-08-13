@@ -88,10 +88,36 @@
 }
 
 .dropbtn {
-  border: 2px solid #17426d;
+  border: 1px solid #17426d;
   background-color: white;
   color: black;
   padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
+}
+
+.container-banner {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+
+/* Top left text */
+.banner {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-size:50px;
+}
+
+.banner-posterAnnonce {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    font-size:20px;
+    cursor: pointer;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
 }

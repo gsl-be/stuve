@@ -6,6 +6,8 @@
 <body>
    <link rel="stylesheet" type="text/css" href="stylesheets/entete.css">
    <link rel="stylesheet" type="text/css" href="stylesheets/homepage.css">
+   <link rel="stylesheet" type="text/css" href="stylesheets/servicesbarre.css">
+
    
 <!-- Division avec campus,logo,login, sign up -->
 <div>
@@ -14,7 +16,7 @@
 </div>  
 
 <div class="columnLogo" style="text-align: center;">
-  <img src="pictures/LogoSMOOK.png" style="width:200px; height:auto; cursor: pointer;" onclick="window.location.href='index.html'">
+  <img src="pictures/logoSMOOK.png" style="width:200px; height:auto; cursor: pointer" onclick="window.location.href='index.html'">
 </div>
    <!--login -->
    <div class="columnLogo">
@@ -96,51 +98,14 @@
   </form>
 
 </div>
-
-
-<!-- 4 services -->
-<!-- <div class="services4"> -->
-<div class="row">
-  <div class="column">
-    <div class="container2">
-      <img src="pictures/Mobilier Small.jpg" alt="mobilier" >
-      <div class="bottom-left">MOBILIER</div>
-      <div class="overlay">En cliquant ici, tu arriveras sur la page d achat ou de vente du mobilier. Tu touveras tout ce dont tu auras besoin pour vivre une vie d etudiant insouciante. On s occupe de tout!
-        <button class="achat" onclick="window.location.href='categories.html'">Achat</button>
-        <button class="vente" onclick="window.location.href='selling.html'">Vente</button>
-      </div>
-      <!--<button class="overlay2" onclick="window.location.href='categories.html'">Achat</button>
-      <button class="overlay2" onclick="window.location.href='selling.html'">Vente</button> -->    
-    </div>
-    </div>
-  <div class="column">
-    <div class="container2">
-      <img src="pictures/Entraide Small 2.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
-      <div class="overlay"> - A VENIR - <br>Mise en relation d etudiants afin de permettre l entraide lors d un emmenagement ou demenagement.</div>
-      <div class="bottom-right">ENTRAIDE </div>
-      <!-- <div class="bottom-right2">A venir</div> -->
-    </div>
-  </div>
+<!-- barre des services -->
+<div>
+<button class="btnserv mob" onclick="window.location.href='categories.html'">Mobilier</button>
+<button class="btnserv entraide" style="background-color: #0b5845;color: white">Entraide</button>
+<button class="btnserv map" onclick="window.location.href='map.html'">Carte</button>
+<button class="btnserv stockage" onclick="window.location.href='stockage.html'">Logistiques</button>
 </div>
-<div class="row">
-  <div class="column">
-    <div class="container2">
-      <img src="pictures/Carte Small.jpg" alt="map" style="cursor: pointer;" onclick="window.location.href='map.html'">
-      <div class="bottom-left">CARTE</div>
-      <!-- <div class="bottom-left2">A venir</div> -->
-      <div class="overlay">- A VENIR - <br> Carte qui permet de localiser les objets a donner se trouvant dans les rues de Louvain-la-Neuve.</div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="container2">
-      <img src="pictures/Logistics Small.jpg" alt="Stockage" style="cursor: pointer;" onclick="window.location.href='stockage.html'">
-      <div class="bottom-right">LOGISTIQUES</div>
-      <!-- <div class="bottom-right2">A venir</div> -->
-      <div class="overlay">- A VENIR - <br>SMOOK propose de s'occuper du transport lors de l'achat de mobilier et son stockage pendant l'ete.</div>
-    </div>
-  </div>
-</div>
-<!-- </div> -->
+
+<h1>COMING SOON</h1>
 </body>
 </html>
-

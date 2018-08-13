@@ -13,7 +13,8 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/entete.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/categories.css">
 <link rel="stylesheet" type="text/css" href="stylesheets/servicesbarre.css">
-   
+   <link rel="stylesheet" type="text/css" href="stylesheets/friteuse.css">
+ 
 <div>
    <div class="columnLogo">   
     <p> Campus <br> Louvain-la-Neuve </p>
@@ -120,128 +121,7 @@
 
 </div>
 
-<!-- 4 categoris -->
-<div class="navbar">
- <div class="dropdown">
-  <div>
-  <img src="pictures/Sofa.jpg" width=150px>
-</div>
-<div>
-    <button class="dropbtn" onclick="myFunction('dropDownMob')">Mobilier
-      <i class="fa fa-caret-down"></i>
-    </button>
-  </div>
-    <div class="dropdown-content" id="dropDownMob">
-      <a href="/display?type=etagere">Etagere</a>
-      <a href="#Armoire">Armoire</a> 
-      <a href="#bureau">Bureau</a>
-      <a href="#chaise">Chaise</a>
-      <a href="#chaisebureau">Chaise de bureau</a>
-      <a href="#lit">Lit</a>
-      <a href="#table">Table</a>   
-      <a href="#tablebasse">Table basse</a>
-      <a href="#tabledenuit">Table de nuit</a>    
-    </div>
-  </div>
-<div class="dropdown">
-  <div>
-  <img src="pictures/Fridge.jpg" width=150px style="vertical-align: middle">
-</div>
-<div>
-    <button class="dropbtn" onclick="myFunction('dropDownElec')">Electromenager
-      <i class="fa fa-caret-down"></i>
-    </button></div>
-    <div class="dropdown-content" id="dropDownElec">
-      <a href="aspirateur "> Aspirateur </a>
-      <a href="balance"> Balance</a>
-      <a href="#bouilloire">Bouilloire</a>
-      <a href="#four">Four</a>
-      <a href="#frigo">Frigo</a>
-      <a href="#grillepain">Grille-pain</a>
-      <a href="lavevaisselle"> Lave vaisselle </a>
-      <a href=" machinecafe"> Machine a cafe</a>
-      <a href="#microondes">Micro-ondes</a>
-      <a href="#mixeur">Mixeur</a>
-  </div>
-</div>
-<div class="dropdown">
-  <div>
-  <img src="pictures/Dish.jpg" width=150px style="vertical-align: middle;"></div>
-  <div>
-    <button class="dropbtn" onclick="myFunction('dropDownVais')">Vaisselle/Ustensiles
-      <i class="fa fa-caret-down"></i>
-    </button></div>
-    <div class="dropdown-content" id="dropDownVais">
-      <a href="allumegas"> Allume-gaz </a>
-      <a href="#assiette">Assiette</a>
-      <a href="bols"> Bols </a>
-      <a href="chopsticks"> Chopsticks </a>     
-      <a href="#couverts">Couverts</a>
-      <a href="couteaux"> Couteaux </a>
-      <a href="ciseaux"> Ciseaux </a>
-      <a href="#fouet">Fouet</a>
-      <a href="#manique">Manique</a>
-      <a href="Moulegateau"> Moule a gateaux </a>
-      <a href="poele"> Poele </a>
-      <a href="raclette"> Raclette</a>
-      <a href="rape">Rape </a>
-      <a href="seau"> Seau</a>
-      <a href="#sousplat">Sous-plat</a>
-      <a href="#spatule">Spatule</a> 
-      <a href="verres"> Verres </a>
+<!-- les categories sur la gauche et les articles -->
 
-  </div>
-</div>
-
-  <div class="dropdown">
-    <div>
-    <img src="pictures/Lamp.jpg" width=150px style="vertical-align: middle;">
-  </div><div>
-    <button class="dropbtn" onclick="myFunction('dropDownLamp')">Lampes
-      <i class="fa fa-caret-down"></i>
-    </button></div>
-    <div class="dropdown-content" id="dropDownLamp">
-     <a href="#home">Lampes de bureau</a>
-    <a href="#about">Lampes de chevet</a>
-    <a href="#contact">Lustres</a>
-    </div>
-  </div> 
-</div>
-
-
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction(dropDownName) {
-  removeAll();
-    document.getElementById(dropDownName).classList.toggle("show");
-}
-
-removeAll = function(){
-    var myDropdown = document.getElementById("dropDownMob");
-      if (myDropdown.classList.contains('show')) {
-        myDropdown.classList.remove('show');
-      }
-    myDropdown = document.getElementById("dropDownElec");
-      if (myDropdown.classList.contains('show')) {
-        myDropdown.classList.remove('show');
-      }
-    myDropdown = document.getElementById("dropDownVais");
-      if (myDropdown.classList.contains('show')) {
-        myDropdown.classList.remove('show');
-      }
-       myDropdown = document.getElementById("dropDownLamp");
-      if (myDropdown.classList.contains('show')) {
-        myDropdown.classList.remove('show');
-      }
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-    removeAll();
-  }
-}
-</script>
 </body>
 </html>

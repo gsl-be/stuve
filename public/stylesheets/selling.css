@@ -73,3 +73,17 @@ input[type=submit]:hover {
     padding: 10px;
     /*margin-left:100px;*/
 }
+.container-banner {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+
+/* Top left text */
+.banner {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-size:50px;
+}
