@@ -48,12 +48,68 @@ app.get('/signup', function(req, res, next) {
   email = req.query["mail"]
   password = req.query["psw"]
   year = req.query["annee"]
-  db.run(`INSERT INTO users(prenom,nom,email,password,year) VALUES(?,?,?,?,?)`, [prenom,nom,email,password,year], function(err) {
+  db.all('SELECT COUNT(*) count FROM users WHERE email=? AND password=?',[email,password], function(err,rows) {
     if (err) {
       return console.log(err.message);
     }
     // get the last insert id
-    console.log(`A row has been inserted with rowid ${this.lastID}`);
+    if(rows[0].count==0){
+      db.run(`INSERT INTO users(prenom,nom,email,password,year) VALUES(?,?,?,?,?)`, [prenom,nom,email,password,year], function(err) {
+        if (err) {
+          return console.log(err.message);
+        }
+        db.all("SELECT * FROM users", [], (err, rows) => {
+          if (err) {
+            throw err;
+          }
+          rows.forEach((row) => {
+            console.log(row);
+          });
+        });
+      });
+    }else{
+        res.sendFile('index.html', { root: viewfolder,errorMail:true})
+    }
+  res.sendFile('index.html', { root: viewfolder})
+ });
+});
+
+app.get('/poster_annonce', function(req, res, next) {
+  cat = req.query["categories"]
+  souscatMob = req.query["souscategoriesMob"]
+  souscatElec = req.query["souscategoriesElec"]
+  souscatVaiss = req.query["souscategoriesVaiss"]
+  souscatLampe = req.query["souscategoriesLampe"]
+  var souscat;
+  if(cat=="mobilier"){
+    souscat = souscatMob;
+  }else if(cat=="electronics"){
+    souscat = souscatElec;
+  }else if(cat=="vaisselle"){
+    souscat = souscatVaiss;
+  }else{
+    souscat = souscatLampe;
+  }
+  marque = req.query["marq"]
+  color = req.query["color"]
+  etat = req.query["etat"]
+  matiere = req.query["matiere"]
+  age = req.query["age"]
+  dim = req.query["dim"]
+  price = req.query["price"]
+  descr = req.query["description"]
+  db.run(`INSERT INTO vente(cat,souscat,marque,couleur,etat,matiere,age,dim,prix,descr) VALUES(?,?,?,?,?,?,?,?,?,?)`, [cat,souscat,marque,color,etat,matiere,age,dim,price,descr], function(err) {
+  if (err) {
+      return console.log(err.message);
+  }
+   db.all("SELECT * FROM vente", [], (err, rows) => {
+  if (err) {
+    throw err;
+  }
+  rows.forEach((row) => {
+    console.log(row);
+  });
+});
   });
   res.sendFile('index.html', { root: viewfolder})
  });
@@ -78,6 +134,7 @@ let db = new sqlite3.Database('mydb');
 
 
 db.run('CREATE TABLE IF NOT EXISTS users(prenom text,nom text,email text,password text,year text)');
+db.run('CREATE TABLE IF NOT EXISTS vente(cat text,souscat text,marque text,couleur text,etat text,matiere text,age text,dim text,prix text,descr text)');
 
 ////////////////////////////start the server/////////////////////
 var port=3000
