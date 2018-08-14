@@ -1,1 +1,209 @@
 /*Css friteuse*/
+
+/* Menu */
+.vertical-menu {
+    width: 200px;
+    float: left;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 1px;
+    text-decoration: none;
+    font-family: helvetica;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.vertical-menu b {
+    background-color: #eee;
+    color: grey;
+    display: block;
+    padding: 1px;
+    text-decoration: none;
+    font-family: helvetica;
+    font-size: 10pt;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color:#3104B4;
+    color: white;
+}
+
+.vertical-menu b:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu b.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* entetes */
+
+.entetes {
+	background-color: #eee;
+    color: black;
+    display: block;
+    padding: 1px;
+    font-family: helvetica;
+    font-size: 10pt;
+    margin: 10px;
+    font-weight: bold;
+}
+
+/* Produits */
+
+.row{
+    text-align: center;
+    /*margin-left:15%;*/
+
+}
+
+.row:after {
+    content: "";
+    display: table;
+    padding: 55px;
+    /*padding:10px;*/
+    margin-left: : 10px;
+    margin-right:  10px;
+    text-align:center;
+}
+
+.container2 {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+
+.container2 img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.container2 .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.container2 .btn:hover {
+    background-color: black;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: black;
+    font-size: 16pt;
+}
+
+.bottom-left2 {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    color: white;
+    font-size: 14pt;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 24px;
+    right: 16px;
+    color: white;
+    
+    font-size: 28pt
+}
+.bottom-right2 {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    color: white;
+    
+    font-size: 14pt
+}
+
+.overlay {    
+  position:absolute;
+  top:0;
+  background: transparent; /* Black see-through */
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 14pt;
+  /*padding: 20px;*/
+  text-align: center;
+  top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay .achat{
+  background: transparent; 
+  width: 20%;
+ border: 2px solid  #17426d;
+  text-align: center;
+  position:absolute;
+  left:100px;
+    top:100px;
+  color: white;
+  transition: .5s ease;
+   font-size: 10pt;
+   cursor: pointer;
+}
+
+.overlay .vente{
+  background: transparent; 
+  width: 40%;
+  border: 2px solid  #17426d;
+  text-align: center;
+  position:absolute;
+  left:60px;
+    top:25px;
+  color: white;
+  transition: .5s ease;
+   font-size: 10pt;
+   cursor: pointer;
+}
+.container2:hover .overlay {
+  opacity: 1;
+}
+
+
+.column {
+    float: left;
+    width: 15vw;
+    height: 15vh;
+    padding: 10px;
+    /*margin-left:100px;*/
+}
+
+.column img:hover {
+    /*opacity: 1;*/
+}
+
+.column img {
+	height: 120px;
+	width: 200px;
+    /*opacity: 0.8; */
+    /*cursor: pointer; */
+}
