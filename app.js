@@ -4,6 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mysql = require('mysql'); 
+var formidable = require('formidable'); 
+var http = require('http');
+var fs = require('fs');
 
 var app = express();
 
@@ -28,19 +31,30 @@ app.use(express.static(path.join(__dirname, 'views')));
 
 /* GET home page. */
 app.get('/', function(req, res, next) {
-   let sql = `SELECT * FROM users
-           ORDER BY prenom`;
- 
-  db.all(sql, [], (err, rows) => {
-  if (err) {
-    throw err;
-  }
-  rows.forEach((row) => {
-    console.log(row);
-  });
+  res.sendFile('index.html', {root: viewfolder});
 });
-  res.sendFile('index.html', { root: viewfolder});
-});
+
+app.post('/fileupload',function (req, res) {
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+      var oldpath = files.uploadIMG.path;
+      var newpath = 'C:/Users/Kyara/Documents/' + files.uploadIMG.name; //CHANGER EN TON REPERTOIRE
+      fs.rename(oldpath, newpath, function (err) {
+        if (err) throw err;
+        //res.end();
+      });
+ });
+  
+})
+
+
+app.get('/load/:key', function(req, res, next) {
+  res.send('block')
+} );
+
+app.get('/fri', function(req, res, next) {
+  res.sendFile('friteuse.html', {root: viewfolder})
+} );
 
 app.get('/signup', function(req, res, next) {
   prenom = req.query["prenom"]
@@ -98,7 +112,8 @@ app.get('/poster_annonce', function(req, res, next) {
   dim = req.query["dim"]
   price = req.query["price"]
   descr = req.query["description"]
-  db.run(`INSERT INTO vente(cat,souscat,marque,couleur,etat,matiere,age,dim,prix,descr) VALUES(?,?,?,?,?,?,?,?,?,?)`, [cat,souscat,marque,color,etat,matiere,age,dim,price,descr], function(err) {
+  img = req.query["imgName"]
+  db.run(`INSERT INTO vente(cat,souscat,marque,couleur,etat,matiere,age,dim,prix,descr,img) VALUES(?,?,?,?,?,?,?,?,?,?,?)`, [cat,souscat,marque,color,etat,matiere,age,dim,price,descr,img], function(err) {
   if (err) {
       return console.log(err.message);
   }
@@ -134,7 +149,7 @@ let db = new sqlite3.Database('mydb');
 
 
 db.run('CREATE TABLE IF NOT EXISTS users(prenom text,nom text,email text,password text,year text)');
-db.run('CREATE TABLE IF NOT EXISTS vente(cat text,souscat text,marque text,couleur text,etat text,matiere text,age text,dim text,prix text,descr text)');
+db.run('CREATE TABLE IF NOT EXISTS vente(cat text,souscat text,marque text,couleur text,etat text,matiere text,age text,dim text,prix text,descr text, img text)');
 
 ////////////////////////////start the server/////////////////////
 var port=3000

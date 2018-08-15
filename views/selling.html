@@ -9,6 +9,11 @@
    <link rel="stylesheet" type="text/css" href="stylesheets/selling.css">
    <link rel="stylesheet" type="text/css" href="stylesheets/servicesbarre.css">
 
+   <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<meta charset=utf-8 />
+
 <div>
    <div class="columnLogo">   
     <p> Campus <br> Louvain-la-Neuve </p>
@@ -114,11 +119,16 @@
 
 </div><!-- partie vente -->
 
-
+<iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
 <h2>Nouvelle annonce</h2>
 <div class="row2">
 <div class="column2">
-  <textarea  placeholder="Importer images" style="width:300px ;height:300px;border: 2px solid black"></textarea>
+  <textarea  id="putIMG" placeholder="Importer images" style="width:300px ;height:300px;border: 2px solid black"></textarea>
+  <img id="blah" src="#" style="border-radius: 4px;display:none;width:290px ;height:290px;border: 2px solid black"/>
+  <form action="/fileupload" method="post" enctype="multipart/form-data" target="dummyframe">
+  <input type="file" id="uploadIMG" name="uploadIMG" onchange="changePicture(this);" multiple>
+  <input id="submitFile" type="submit" onclick="submitAll();">
+</form>
 </div>
 <div class="column2">
 <div class="container">
@@ -294,9 +304,11 @@
 </div>
 </div>
 <div class="row2">
-  <textarea id="description" name="description" placeholder="Description detaillee..." style="height:200px;border: 2px solid black;margin: 10px"></textarea>
+  <textarea id="description" name="description" placeholder="Description detaillee..." style="height:200px;width:99%;border: 2px solid black;margin: 10px"></textarea>
   <div class="row2">
+      <input type="text"  id="imgName" name='imgName' style="display: none">
       <input type="submit" value="Soumettre mon annonce">
+        <!-- <input type="submit"  id="sub" style="display: none"> -->
     </div>
 </div>
 </form>
@@ -354,6 +366,30 @@
 
   //parce que mobilier est selectionne par defaut
   setFieldsMobilier()
+
+  function changePicture(input){
+      if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(296)
+                    .height(296);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+            document.getElementById('putIMG').style.display='none';     
+            document.getElementById('blah').style.display='block';  
+       }
+  }
+
+  function submitAll(){
+    
+      document.getElementById("imgName").value = document.getElementById("uploadIMG").files[0].name
+
+      //document.getElementById("sub").click();
+  }
 </script>
 
 </body>

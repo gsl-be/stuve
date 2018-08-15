@@ -1,5 +1,5 @@
 /*Css friteuse*/
-
+body {font-family: Lato, Light, sans-serif;}
 /* Menu */
 .vertical-menu {
     width: 200px;
@@ -7,74 +7,86 @@
 }
 
 .vertical-menu a {
-    background-color: #eee;
+    background-color: white;
     color: black;
     display: block;
     padding: 1px;
     text-decoration: none;
-    font-family: helvetica;
-    font-size: 10pt;
+    /*font-family:  lato light;*/
+    font-size: 8pt;
     font-weight: bold;
+
+
 }
 
+
 .vertical-menu b {
-    background-color: #eee;
-    color: grey;
+    background-color: white;
+    color: black;
     display: block;
     padding: 1px;
     text-decoration: none;
-    font-family: helvetica;
-    font-size: 10pt;
+    /*font-family:  lato light;*/
+    font-size: 8pt;
+    margin-left: 25px;
+    cursor: pointer;
+    font-weight: normal;
 }
 
-.vertical-menu a:hover {
-    background-color: #ccc;
+.vertical-menu b:hover{
+  font-weight: bold;
+  font-style: italic;
 }
 
-.vertical-menu a.active {
-    background-color:#3104B4;
-    color: white;
-}
+/*.vertical-menu a:hover {*/
+    /*background-color: #ccc;*/
+/*}*/
 
-.vertical-menu b:hover {
-    background-color: #ccc;
-}
+/*.vertical-menu a.active {*/
+    /*background-color:#3104B4;*/
+    /*color: white;*/
+/*}*/
 
-.vertical-menu b.active {
-    background-color: #4CAF50;
-    color: white;
-}
+
+
+/*.vertical-menu b.active {*/
+    /*background-color: #4CAF50;*/
+    /*color: white;*/
+/*}*/
 
 /* entetes */
 
 .entetes {
-	background-color: #eee;
+	background-color: transparent;
     color: black;
     display: block;
-    padding: 1px;
-    font-family: helvetica;
+    /*padding: 1px;*/
+    /*font-family:  lato light;*/
     font-size: 10pt;
-    margin: 10px;
-    font-weight: bold;
+    /*margin: 10px;*/
+    /*font-weight: bold;*/
 }
 
 /* Produits */
 
 .row{
     text-align: center;
+    /*padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;*/
     /*margin-left:15%;*/
 
 }
 
-.row:after {
-    content: "";
-    display: table;
-    padding: 55px;
+/*.row:after {*/
+    /*content: "";*/
+    /*display: table;*/
+    /*padding: 20px;*/
     /*padding:10px;*/
-    margin-left: : 10px;
-    margin-right:  10px;
-    text-align:center;
-}
+    /*margin-left: : 10px;*/
+    /*margin-right:  10px;*/
+    /*text-align:center;*/
+/*;}*/
 
 .container2 {
     position: relative;
@@ -87,6 +99,10 @@
     width: 100%;
     height: auto;
 }
+
+/*.container2 img:hover {
+    background-color: black;
+}*/
 
 .container2 .btn {
     position: absolute;
@@ -112,8 +128,9 @@
     position: absolute;
     bottom: 10px;
     left: 10px;
-    color: black;
+    color: white;
     font-size: 16pt;
+
 }
 
 .bottom-left2 {
@@ -134,7 +151,7 @@
 }
 .bottom-right2 {
     position: absolute;
-    bottom: 8px;
+    bottom: 15px;
     right: 16px;
     color: white;
     
@@ -143,18 +160,21 @@
 
 .overlay {    
   position:absolute;
-  top:0;
-  background: transparent; /* Black see-through */
-  width: 100%;
+  top:0.5vw;
+  left:0.5vw;
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  width: 19vw;
+  height:19vw;
   transition: .5s ease;
   opacity:0;
   color: white;
   font-size: 14pt;
   /*padding: 20px;*/
   text-align: center;
-  top: 50%;
-    left: 80%;
-    transform: translate(-50%, -50%);
+  cursor: pointer;
+  /*top: 0%;*/
+    /*left: 0%;*/
+    /*transform: translate(-50%, -50%);*/
 }
 
 .overlay .achat{
@@ -177,8 +197,8 @@
   border: 2px solid  #17426d;
   text-align: center;
   position:absolute;
-  left:60px;
-    top:25px;
+  left:1.5vw;
+  top:16.5vw;
   color: white;
   transition: .5s ease;
    font-size: 10pt;
@@ -191,9 +211,9 @@
 
 .column {
     float: left;
-    width: 15vw;
-    height: 15vh;
-    padding: 10px;
+    width: 20vw;
+    height: 20vw;
+    /*padding: 10px;*/
     /*margin-left:100px;*/
 }
 
@@ -202,8 +222,9 @@
 }
 
 .column img {
-	height: 120px;
-	width: 200px;
+	height: 20vw;
+	width: 20vw;
+  padding:0.5vw
     /*opacity: 0.8; */
     /*cursor: pointer; */
 }

@@ -142,8 +142,12 @@
 </div>
 <!-- </div> -->
 </body>
-<script>var errorMail = "<%= errorMail %>";
-console.log(errorMail);
+<script>$.ajax({
+  url: '',
+  complete: function(data) {
+    console.log(data);
+  }
+});
 </script>
 </html>
 

@@ -11,10 +11,10 @@
 </head>
 <body>
 
-  <link rel="stylesheet" type="text/css" href="../public/stylesheets/entete.css">
-  <link rel="stylesheet" type="text/css" href="../public/stylesheets/categories.css">
-  <link rel="stylesheet" type="text/css" href="../public/stylesheets/servicesbarre.css">
-  <link rel="stylesheet" type="text/css" href="../public/stylesheets/friteuse.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/entete.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/categories.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/servicesbarre.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/friteuse.css">
 
   <div>
    <div class="columnLogo">   
@@ -22,14 +22,14 @@
   </div>  
 
   <div class="columnLogo" style="text-align: center;">
-    <img src="../public/pictures/logoSMOOK.png" style="width:200px; height:auto;  cursor: pointer" onclick="window.location.href='index.html'">
+    <img src="pictures/logoSMOOK.png" style="width:200px; height:auto;  cursor: pointer" onclick="window.location.href='index.html'">
   </div>
   <!--login -->
   <div class="columnLogo">
    <div class="header" align="right"><button style=" cursor: pointer" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></div>
 
    <div class="header" align="right"><button  style=" cursor: pointer" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button></div>
-   <img src="../public/pictures/K.jpg" alt="Avatar" style=" cursor: pointer" class="avatar">
+   <img src="pictures/K.jpg" alt="Avatar" style=" cursor: pointer" class="avatar">
  </div>
 </div>
 
@@ -116,7 +116,7 @@
 
 <!-- banniere -->
 <div class="container-banner">
-  <img src="../public/pictures/Mobilier Banner2.jpg" style="margin-top:10px;width:100%">
+  <img src="pictures/Mobilier Banner2.jpg" style="margin-top:10px;width:100%">
   <div class="banner">ACHAT</div>
   <button class="banner-posterAnnonce" onclick="window.location.href='selling.html'"> Poster une annonce</button>
 
@@ -125,10 +125,10 @@
 <!-- les categories sur la gauche et les articles -->
 <div class="menuentete">
 <div class="vertical-menu">
-  <a href="#" class="active">Categories</a>
+  <!-- <a href="#" class="active">Categories</a> -->
 
-  <a href="#">Mobilier</a>
-  <b href="#">Lits</b>
+  <a href="#" onclick="window.location.href='mobilier.html'">Mobilier</a>
+  <b id="test" href="#" onclick="loadF('lit')">Lits</b>
   <b href="#">Chaises</b>
   <b href="#">Chaises de bureau</b>
   <b href="#">Tables</b>
@@ -138,7 +138,7 @@
   <b href="#">Armoires</b>
   <b href="#">Etageres</b>
 
-  <a href="#">Electromenager</a>
+  <a href="#" style=" margin-top: 20px;">Electromenager</a>
   <b href="#">Fours</b>
   <b href="#">Micro-ondes</b>
   <b href="#">Bouilloires</b>
@@ -150,7 +150,7 @@
   <b href="#">Balances</b>
   <b href="#">Aspirateurs</b>
 
-  <a href="#">Vaisselles/ustensiles</a>
+  <a href="#" style=" margin-top: 20px;">Vaisselles/ustensiles</a>
   <b href="#">Assiettes</b>
   <b href="#">Verres</b>
   <b href="#">Bols</b>
@@ -170,31 +170,33 @@
   <b href="#">seaux</b>
   <b href="#">Maniques</b>
 
-  <a href="#">Lampes</a>
+  <a href="#" style=" margin-top: 20px;">Lampes</a>
+  <b href="#">Lampes de bureau poser</b>
   <b href="#">Lampes de bureau</b>
   <b href="#">Lampes de chevet</b>
   <b href="#">Lustres</b>
 </div>
 
-<div class="entetes">
-  <p>Lits</p>
-</div>
+<!-- <div class="entetes"> -->
+  <!-- <p>Lits</p> -->
+<!-- </div> -->
 
 <div class="row">
   <div class="column">
     <div class="container2">
-      <img src="../public/pictures/photos-produits/friteuse1.jpg" alt="mobilier" >
-      <div class="bottom-left">Friteuse</div>
-      <div class="overlay">100 euros
-        <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
+      <img src="pictures/photos-produits/friteuse1.jpg" alt="mobilier" >
+      <div class="bottom-right2">100 euros</div>
+      <div class="overlay" onclick="window.location.href='selling.html'">
+        Friteuse
+        <!-- <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button> -->
       </div>
       <!--<button class="overlay2" onclick="window.location.href='categories.html'">Achat</button>
       <button class="overlay2" onclick="window.location.href='selling.html'">Vente</button> -->    
     </div>
-    </div>
+  </div>
   <div class="column">
     <div class="container2">
-      <img src="../public/pictures/photos-produits/canape1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
+      <img src="pictures/photos-produits/canape1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
       <div class="overlay"> 200 euros
         <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
       </div>
@@ -203,7 +205,7 @@
   </div>
   <div class="column">
     <div class="container2">
-      <img src="../public/pictures/photos-produits/chaise1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
+      <img src="pictures/photos-produits/chaise1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
       <div class="overlay"> 200 euros
         <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
       </div>
@@ -212,16 +214,7 @@
   </div>
   <div class="column">
     <div class="container2">
-      <img src="../public/pictures/photos-produits/microonde1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
-      <div class="overlay"> 200 euros
-        <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
-      </div>
-      <!-- <div class="bottom-right2">A venir</div> -->
-    </div>
-  </div>
-  <div class="column">
-    <div class="container2">
-      <img src="../public/pictures/photos-produits/canape1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
+      <img src="pictures/photos-produits/microonde1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
       <div class="overlay"> 200 euros
         <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
       </div>
@@ -234,18 +227,7 @@
 <div class="row">
   <div class="column">
     <div class="container2">
-      <img src="../public/pictures/photos-produits/friteuse1.jpg" alt="mobilier" >
-      <div class="bottom-left">Friteuse</div>
-      <div class="overlay">100 euros
-        <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
-      </div>
-      <!--<button class="overlay2" onclick="window.location.href='categories.html'">Achat</button>
-      <button class="overlay2" onclick="window.location.href='selling.html'">Vente</button> -->    
-    </div>
-    </div>
-  <div class="column">
-    <div class="container2">
-      <img src="../public/pictures/photos-produits/canape1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
+      <img src="pictures/photos-produits/canape1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
       <div class="overlay"> 200 euros
         <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
       </div>
@@ -254,7 +236,7 @@
   </div>
   <div class="column">
     <div class="container2">
-      <img src="../public/pictures/photos-produits/chaise1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
+      <img src="pictures/photos-produits/chaise1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
       <div class="overlay"> 200 euros
         <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
       </div>
@@ -263,7 +245,7 @@
   </div>
   <div class="column">
     <div class="container2">
-      <img src="../public/pictures/photos-produits/microonde1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
+      <img src="pictures/photos-produits/microonde1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
       <div class="overlay"> 200 euros
         <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
       </div>
@@ -272,7 +254,7 @@
   </div>
   <div class="column">
     <div class="container2">
-      <img src="../public/pictures/photos-produits/canape1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
+      <img src="pictures/photos-produits/canape1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
       <div class="overlay"> 200 euros
         <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
       </div>
@@ -281,71 +263,6 @@
   </div>
 </div>
 
-<div class="entetes">
-  <p>Chaises</p>
-</div>
-
-<div class="row">
-  <div class="column">
-    <div class="container2">
-      <img src="../public/pictures/photos-produits/friteuse1.jpg" alt="mobilier" >
-      <div class="bottom-left">Friteuse</div>
-      <div class="overlay">100 euros
-        <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
-      </div>
-      <!--<button class="overlay2" onclick="window.location.href='categories.html'">Achat</button>
-      <button class="overlay2" onclick="window.location.href='selling.html'">Vente</button> -->    
-    </div>
-    </div>
-  <div class="column">
-    <div class="container2">
-      <img src="../public/pictures/photos-produits/canape1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
-      <div class="overlay"> 200 euros
-        <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
-      </div>
-      <!-- <div class="bottom-right2">A venir</div> -->
-    </div>
-  </div>
-  <div class="column">
-    <div class="container2">
-      <img src="../public/pictures/photos-produits/chaise1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
-      <div class="overlay"> 200 euros
-        <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
-      </div>
-      <!-- <div class="bottom-right2">A venir</div> -->
-    </div>
-  </div>
-  <div class="column">
-    <div class="container2">
-      <img src="../public/pictures/photos-produits/microonde1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
-      <div class="overlay"> 200 euros
-        <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
-      </div>
-      <!-- <div class="bottom-right2">A venir</div> -->
-    </div>
-  </div>
-  <div class="column">
-    <div class="container2">
-      <img src="../public/pictures/photos-produits/canape1.jpg" alt="Entraide" " style="cursor: pointer;" onclick="window.location.href='entraide.html'">
-      <div class="overlay"> 200 euros
-        <button class="vente" onclick="window.location.href='selling.html'">Plus d'info</button>
-      </div>
-      <!-- <div class="bottom-right2">A venir</div> -->
-    </div>
-  </div>
-</div>
-
-<div class="entetes">
-  <p>Chaises de bureau</p>
-</div>
-
-<div class="entetes">
-  <p>Tables de nuit</p>
-</div>
-
-<div class="entetes">
-  <p>Tables</p>
-</div>
 
 </div>
 
@@ -353,8 +270,18 @@
 
 <!-- articles -->
 
-
-
+<script type="text/javascript">
+  function loadF(key){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("test").innerHTML = this.responseText
+       }
+    };
+    xhttp.open("GET", "http://localhost:3000/load/"+key, true);
+    xhttp.send(); 
+  }
+</script>
 
 
 </html>
