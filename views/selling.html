@@ -127,7 +127,7 @@
   <img id="blah" src="#" style="border-radius: 4px;display:none;width:290px ;height:290px;border: 2px solid black"/>
   <form action="/fileupload" method="post" enctype="multipart/form-data" target="dummyframe">
   <input type="file" id="uploadIMG" name="uploadIMG" onchange="changePicture(this);" multiple>
-  <input id="submitFile" type="submit" onclick="submitAll();">
+  <input id="submitFile" type="submit" style="display: none;">
 </form>
 </div>
 <div class="column2">
@@ -307,7 +307,8 @@
   <textarea id="description" name="description" placeholder="Description detaillee..." style="height:200px;width:99%;border: 2px solid black;margin: 10px"></textarea>
   <div class="row2">
       <input type="text"  id="imgName" name='imgName' style="display: none">
-      <input type="submit" value="Soumettre mon annonce">
+      <button type="button" onclick="uploadData();">Soumettez votre annonce</button>
+      <input type="submit" id="subAll" style="display:none">
         <!-- <input type="submit"  id="sub" style="display: none"> -->
     </div>
 </div>
@@ -380,16 +381,40 @@
 
             reader.readAsDataURL(input.files[0]);
             document.getElementById('putIMG').style.display='none';     
-            document.getElementById('blah').style.display='block';  
+            document.getElementById('blah').style.display='block';
+            document.getElementById("imgName").value = document.getElementById("uploadIMG").files[0].name;
+            var i = 1;
+            while(input.files[i]){
+               document.getElementById("imgName").value = document.getElementById("imgName").value + "|" + document.getElementById("uploadIMG").files[i].name;
+               i++;
+            }
        }
   }
 
-  function submitAll(){
-    
-      document.getElementById("imgName").value = document.getElementById("uploadIMG").files[0].name
-
-      //document.getElementById("sub").click();
+  function uploadData(){
+    document.getElementById("subAll").click();
+    document.getElementById("submitFile").click();
   }
+
+  function getFirstId(){
+    alert("HERE")
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("imgName").value = this.responseText
+            alert(this.responseText)
+            names = this.responseText.split("|")
+            var i;
+            for (i = 0; i < names.length; i++) {
+                document.getElementById('uploadIMG').files[i].name = names[i]
+            } 
+       }
+    };
+    alert(document.getElementById('uploadIMG').files.length)
+    xhttp.open("GET", "http://localhost:3000/getID/"+document.getElementById('uploadIMG').files.length, true);
+    xhttp.send(); 
+  }
+
 </script>
 
 </body>

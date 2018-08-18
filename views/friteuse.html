@@ -181,6 +181,7 @@
   <!-- <p>Lits</p> -->
 <!-- </div> -->
 
+<div id="masterContainer">
 <div class="row">
   <div class="column">
     <div class="container2">
@@ -262,7 +263,7 @@
     </div>
   </div>
 </div>
-
+</div>
 
 </div>
 
@@ -275,7 +276,7 @@
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("test").innerHTML = this.responseText
+            document.getElementById("masterContainer").innerHTML = this.responseText
        }
     };
     xhttp.open("GET", "http://localhost:3000/load/"+key, true);

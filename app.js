@@ -34,11 +34,16 @@ app.get('/', function(req, res, next) {
   res.sendFile('index.html', {root: viewfolder});
 });
 
+ 
+
 app.post('/fileupload',function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
       var oldpath = files.uploadIMG.path;
+      //var nextId = getNextId()
       var newpath = 'C:/Users/Kyara/Documents/' + files.uploadIMG.name; //CHANGER EN TON REPERTOIRE
+      //db.run('DELETE * FROM Nimg')
+      //db.run('INSERT INTO Nimg(n) VALUES (?)',[nextId])
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
         //res.end();
@@ -49,7 +54,43 @@ app.post('/fileupload',function (req, res) {
 
 
 app.get('/load/:key', function(req, res, next) {
-  res.send('block')
+  db.all('SELECT * FROM vente WHERE souscat = ?', [req.params.key], function(err,rows) {
+    if (err) {
+      return console.log(err.message);
+    }
+    var i =0;
+    var row_size = 4;
+    var ret = "";
+    var counter = 0;
+    for(i = 0;i<rows.length;i++){
+          ret = ret + '<div class="row">'
+          var j;
+          for(j=0;j<row_size;j++){
+            if(counter<rows.length){
+              ret = ret + '<div class="column"><div class="container2"><img src="' + 'pictures/' + rows[counter].img.split('|')[0]
+              ret = ret + '"><div class="bottom-right2">'+rows[counter].prix+' euros</div><div class="overlay">'+ rows[counter].souscat
+                  + '</div></div></div>'
+              counter++
+              }
+          }
+          ret = ret + '</div>'
+    }
+    res.send(ret)
+  });
+} );
+
+app.get('/getID/:key', function(req, res, next) {
+    var nextId = getNextId();
+    var resu = ""
+    var i = 0
+    console.log(req.params.key)
+    for(i=0;i<req.params.key;i++){
+        resu = resu + nextId + "|"
+        nextId++
+    }
+    setNextId(nextId)
+    console.log("Setting nextId to " + nextId)
+    res.send(resu.substring(0,resu.length-1))
 } );
 
 app.get('/fri', function(req, res, next) {
@@ -72,14 +113,14 @@ app.get('/signup', function(req, res, next) {
         if (err) {
           return console.log(err.message);
         }
-        db.all("SELECT * FROM users", [], (err, rows) => {
+        /*db.all("SELECT * FROM users", [], (err, rows) => {
           if (err) {
             throw err;
           }
           rows.forEach((row) => {
             console.log(row);
           });
-        });
+        });*/
       });
     }else{
         res.sendFile('index.html', { root: viewfolder,errorMail:true})
@@ -87,6 +128,7 @@ app.get('/signup', function(req, res, next) {
   res.sendFile('index.html', { root: viewfolder})
  });
 });
+
 
 app.get('/poster_annonce', function(req, res, next) {
   cat = req.query["categories"]
@@ -150,6 +192,61 @@ let db = new sqlite3.Database('mydb');
 
 db.run('CREATE TABLE IF NOT EXISTS users(prenom text,nom text,email text,password text,year text)');
 db.run('CREATE TABLE IF NOT EXISTS vente(cat text,souscat text,marque text,couleur text,etat text,matiere text,age text,dim text,prix text,descr text, img text)');
+db.run('CREATE TABLE IF NOT EXISTS Nimg(n text)');
+/*db.run(`INSERT INTO Nimg(n) VALUES(?)`, [0], function(err) {
+  if (err) {
+      return console.log(err.message);
+  }
+});*/
+
+function getNextId(){
+  console.log("in get next ID")
+  var ret = 0;
+  db.all('SELECT max(n) m FROM Nimg', function(err,rows) {
+    if (err) {
+      return console.log(err.message);
+    }
+    console.log("rows in getNextId:")
+      console.log(rows)
+    // get the last insert id
+    if(rows.length==0){
+      console.log("no row")
+      ret = ret + 0;
+      return 0;
+    }else{
+      console.log(rows[0].m)
+      ret = ret + rows[0].m;
+      return rows[0].m;
+      }
+  });
+  //console.log("NEXT ID")
+  //console.log(ret)
+  //console.log("out get next ID")
+  //return ret;
+}
+
+function setNextId(id_to_insert){
+  console.log("in set next ID")
+  //db.run('DELETE FROM Nimg')
+  db.all('SELECT * FROM Nimg', function(err,rows) {
+    if (err) {
+      return console.log(err.message);
+    }
+    // get the last insert id
+    console.log("rows:")
+    console.log(rows)
+  });
+  db.run('INSERT INTO Nimg(n) VALUES (?)',[id_to_insert])
+  db.all('SELECT * FROM Nimg', function(err,rows) {
+    if (err) {
+      return console.log(err.message);
+    }
+    // get the last insert id
+    console.log("rows:")
+    console.log(rows)
+  });
+  console.log("out set next ID")
+}
 
 ////////////////////////////start the server/////////////////////
 var port=3000
