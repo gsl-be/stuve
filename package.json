@@ -1,5 +1,5 @@
 {
-  "name": "stuve",
+  "name": "database",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
@@ -13,5 +13,21 @@
     "mssql": "^4.1.0",
     "mysql": "^2.16.0",
     "sqlite3": "^4.0.2"
-  }
+  },
+  "description": "To install\r ```\r git clone https://github.com/gsl-be/stuve.git\r cd stuve\r npm install \r ```",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsl-be/stuve.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gsl-be/stuve/issues"
+  },
+  "homepage": "https://github.com/gsl-be/stuve#readme"
 }

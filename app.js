@@ -38,7 +38,7 @@ app.post('/fileupload',function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
       var oldpath = files.uploadIMG.path;
-      var newpath = 'C:/Users/Kyara/Documents/' + files.uploadIMG.name; //CHANGER EN TON REPERTOIRE
+      var newpath = 'C:\Users\Thomas\Documents\Université\GSL\SMOOK\stuve\uploaded_pictures' + files.uploadIMG.name; //CHANGER EN TON REPERTOIRE
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
         //res.end();
