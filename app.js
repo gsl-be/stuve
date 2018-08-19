@@ -40,10 +40,7 @@ app.post('/fileupload',function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
       var oldpath = files.uploadIMG.path;
-      //var nextId = getNextId()
-      var newpath = 'C:/Users/Kyara/Documents/' + files.uploadIMG.name; //CHANGER EN TON REPERTOIRE
-      //db.run('DELETE * FROM Nimg')
-      //db.run('INSERT INTO Nimg(n) VALUES (?)',[nextId])
+      var newpath = 'C:\Users\Kyara\Documents\MIT GSL\MoveWebsite\stuve\public\uploaded_pictures' + files.uploadIMG.name;
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
         //res.end();
