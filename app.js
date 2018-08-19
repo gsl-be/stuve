@@ -40,7 +40,7 @@ app.post('/fileupload',function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
       var oldpath = files.uploadIMG.path;
-      var newpath = 'C:\Users\Kyara\Documents\MIT GSL\MoveWebsite\stuve\public\uploaded_pictures' + files.uploadIMG.name;
+      var newpath = 'C:/Users/Kyara/Documents/MIT GSL/MoveWebsite/stuve/public/uploaded_pictures/' + files.uploadIMG.name;
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
         //res.end();
@@ -64,8 +64,8 @@ app.get('/load/:key', function(req, res, next) {
           var j;
           for(j=0;j<row_size;j++){
             if(counter<rows.length){
-              ret = ret + '<div class="column"><div class="container2"><img src="' + 'pictures/' + rows[counter].img.split('|')[0]
-              ret = ret + '"><div class="bottom-right2">'+rows[counter].prix+' euros</div><div class="overlay">'+ rows[counter].souscat
+              ret = ret + '<div class="column" title="' + rows[counter].descr + '"><div class="container2"><img src="' + 'uploaded_pictures/' + rows[counter].img.split('|')[0]
+              ret = ret + '"><div class="bottom-right2">'+rows[counter].prix+' </div><div class="overlay">Etat: '+ rows[counter].etat
                   + '</div></div></div>'
               counter++
               }
@@ -167,6 +167,20 @@ app.get('/poster_annonce', function(req, res, next) {
   });
   res.sendFile('index.html', { root: viewfolder})
  });
+
+app.get('/getDB', function(req,res,next){
+  console.log("GET DB")
+  db.all("SELECT * FROM vente", [], (err, rows) => {
+  if (err) {
+    throw err;
+  }
+  console.log(rows)
+  rows.forEach((row) => {
+    console.log(row);
+  });
+});
+ res.send("see console")
+})
 
 app.get('/login', function(req, res, next) {
   email = req.query["mail"]

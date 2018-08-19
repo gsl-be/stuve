@@ -10,6 +10,7 @@
    <link rel="stylesheet" type="text/css" href="stylesheets/servicesbarre.css">
 
    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+  
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 <meta charset=utf-8 />
@@ -119,7 +120,7 @@
 
 </div><!-- partie vente -->
 
-<iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
+<iframe style="display:none" width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
 <h2>Nouvelle annonce</h2>
 <div class="row2">
 <div class="column2">
@@ -307,7 +308,7 @@
   <textarea id="description" name="description" placeholder="Description detaillee..." style="height:200px;width:99%;border: 2px solid black;margin: 10px"></textarea>
   <div class="row2">
       <input type="text"  id="imgName" name='imgName' style="display: none">
-      <button type="button" onclick="uploadData();">Soumettez votre annonce</button>
+      <button type="button" onclick="uploadData();" class="btnSub" style="float:right">Soumettez votre annonce</button>
       <input type="submit" id="subAll" style="display:none">
         <!-- <input type="submit"  id="sub" style="display: none"> -->
     </div>
@@ -320,8 +321,8 @@
   //pour un mobilier. Elle doit egalement rendre explicitement visible les champs et options qui
   //doivent l etre. Il faut mettre des ids a tout les champs et options...
   function setFieldsMobilier(){
-    document.getElementById('id-souscatMob').selected='selected' 
-    document.getElementById('souscatMob').selected='selected' 
+    document.getElementById('id-souscatMob').style.display='block' 
+    document.getElementById('souscatMob').style.display='block' 
     document.getElementById('id-souscatElec').style.display='none'
     document.getElementById('souscatElec').style.display='none'
     document.getElementById('id-souscatVaisselle').style.display='none' 
